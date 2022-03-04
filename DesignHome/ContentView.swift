@@ -12,7 +12,7 @@ struct ContentView: View {
         
         ZStack {
             Color(red: 1.09, green:0.63, blue:0.52).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            VStack{
+            VStack(spacing:15){
                 
                 VStack {
                     
@@ -28,14 +28,14 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .font(.system(size:25))
                 }
-                //Divider()
+                Divider()
                 //OveryLay
-                VStack {
+                VStack(spacing:15) {
                     RoundedRectangle(cornerRadius: 25).fill(Color.white)
                         .frame(height:50)
                         .overlay(HStack{
                             Image(systemName: "envelope").foregroundColor(.green)
-                            Text("siddharth@gmail.com")}).padding(.all)
+                            Text("siddharth@gmail.com")}).padding(.all).frame(height:50)
                     
                     
                     //Alternative
@@ -49,10 +49,11 @@ struct ContentView: View {
                         
                     }.padding(.horizontal)
                     
-                    
-                    Circle().fill(Color.white).padding(.all,130)
-                        .overlay(Image(systemName: "arrow.forward").resizable().aspectRatio(contentMode: .fit).frame(width: 50, height: 50, alignment: .center))
                 }
+                    
+                Circle().fill(Color.white).padding().frame(width:100, height: 100, alignment: .center)
+                        .overlay(Image(systemName: "arrow.forward").resizable().aspectRatio(contentMode: .fit).frame(width: 50, height: 50, alignment: .center))
+                
             }
         }
     }
